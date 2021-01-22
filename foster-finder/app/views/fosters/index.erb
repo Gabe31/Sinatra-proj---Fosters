@@ -1,0 +1,6 @@
+<%if logged_in? %>
+
+<h1>Fosters</h1>
+
+<% @fosters.each do |foster| %>
+<h2><a href="fosters/<%=fosters.id%>"</a><%foster.name%></h2>

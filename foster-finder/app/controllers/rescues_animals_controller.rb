@@ -1,0 +1,3 @@
+class RescueAnimalsController < ApplicationController
+
+end 
