@@ -25,7 +25,7 @@ get '/fosters' do
 end
 
 
-get 'fosters/:id' do
+get '/fosters/:id' do
     require_login
     @foster= Foster.find(params[:id])
     @user = current_user
