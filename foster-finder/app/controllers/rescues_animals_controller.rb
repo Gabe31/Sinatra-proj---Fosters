@@ -1,3 +1,0 @@
-class RescueAnimalsController < ApplicationController
-
-end 

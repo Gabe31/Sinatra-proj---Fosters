@@ -1,6 +1,7 @@
-<%if logged_in? %>
+<h1> Foster Family </h1> 
+<a href="/fosters/new">Add a new foster</a>
+<% @fosters.each do |person| %>
+    <h2><a href="/fosters/<%= foster.id %>"><%= person.name %></a> </h2>
+   
+    <% end %>
 
-<h1>Fosters</h1>
-
-<% @fosters.each do |foster| %>
-<h2><a href="fosters/<%=fosters.id%>"</a><%foster.name%></h2>

@@ -13,8 +13,8 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
+    background-color: rgb(173, 230, 187);
+    color: rgb(51, 51, 51);
     font-family: Sans-Serif;
     line-height: 18px;
   }
@@ -74,6 +74,14 @@
 
   .branding {
     clear: both;
+  }
+
+  .foster {
+    background-color: rgb(255, 206, 71);
+    color: white;
+    padding: 30px;
+    float: left;
+    font-family: "Gill Sans", sans-serif;
   }
 
   footer.branding {

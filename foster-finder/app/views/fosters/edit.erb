@@ -1,0 +1,12 @@
+<h1>Edit <%= @foster.name%> info</h1>
+<p><% if @error == true%>
+        <%= @error %>
+        <% end %> </p>
+
+        <form action="/fosters/<%=@foster.id %>" method="post">
+        <input id="hidden" type="hidden" name="_method" value="PATCH">
+        <label>Name</label>
+        <input type="text" name="name" value="<%=@foster.name%>">
+        <label>Location</label>
+        <textarea name="location" value="<%=@foster.location%>"></textarea>
+        </form>

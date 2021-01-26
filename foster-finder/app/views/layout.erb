@@ -14,6 +14,29 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+
+<header>
+<br>
+<% if logged_in? %>
+<p>Welcome, <%=current_user.username%>
+<a href="/fosters/new">Add Foster</a>
+<a href="/fosters">Show Fosters</a>
+<% else %>
+<a href="/signup">Sign Up</a><br><br>
+<a href="/login">Login</a>
+<% end %>
+</header>
+
+  <%if logged_in?%>
+  <div>
+    <div><a href="/">Home</a></div>
+    <div><a href="/logout">Log Out</a></div>
+    <div><a href="/Fosters">Fosters</a></div>
+  </div>
+  <% else %>
+    <div><a href="/signup">Sign Up</a></div>
+    <div><a href="/login">Log in</a></div>
+  <% end %>
     <div class="wrapper">
 
         <%= yield %>
