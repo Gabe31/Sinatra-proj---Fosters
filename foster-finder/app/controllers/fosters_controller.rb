@@ -49,7 +49,7 @@ end
 patch '/fosters/:id' do
     if current_user.id == session[:user_id]
         @foster = Foster.find(params[:id])
-        @foster.update(name: params["name"], location: params["location"], animal: params["animal"])
+        @foster.update(name: params["name"], location: params["location"])
         erb :'/fosters/show'
     else
         redirect '/fosters'

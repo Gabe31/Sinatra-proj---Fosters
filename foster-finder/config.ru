@@ -8,3 +8,5 @@ use SessionsController
 use UsersController
 use FosterController
 run ApplicationController
+
+use Rack::MethodOverride
