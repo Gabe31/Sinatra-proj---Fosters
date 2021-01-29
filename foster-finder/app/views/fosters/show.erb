@@ -1,3 +1,14 @@
 <h1><%= @foster.name %></h1>
 <h2><%=@foster.location%></h2>
 <h2><%=@foster.animal%></h2>
+
+<form action="/fosters/<%= @foster.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <% if @foster.user == @user%>
+    <button type="submit">Delete foster</button>
+    <% end %>
+</form>
+<% if @foster.user == @user%>
+<div><a href="/fosters/<%=@foster.id %>/edit">update</a></div>
+<% end %>
+

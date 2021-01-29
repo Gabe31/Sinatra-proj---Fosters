@@ -1,3 +1,4 @@
+binding.pry
 <h1>Edit <%= @foster.name%> info</h1>
 <p><% if @error == true%>
         <%= @error %>
@@ -9,4 +10,5 @@
         <input type="text" name="name" value="<%=@foster.name%>">
         <label>Location</label>
         <textarea name="location" value="<%=@foster.location%>"></textarea>
+        <button type="submit">Edit foster</button>
         </form>
