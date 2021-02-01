@@ -38,8 +38,8 @@ end
 
 get '/fosters/:id/edit' do
     require_login
-    if @foster = Foster.find(params[:id])
-        @user = current_user
+    @foster = current_user.fosters.find_by_id(params[:id])
+    if  @foster
         erb :'/fosters/edit'
     else
         redirect '/fosters'
@@ -47,22 +47,23 @@ get '/fosters/:id/edit' do
 end
 
 patch '/fosters/:id' do
-    if current_user.id == session[:user_id]
-        @foster = Foster.find(params[:id])
+    require_login
+    @foster = current_user.fosters.find_by_id(params[:id])
+     if @foster
         @foster.update(name: params["name"], location: params["location"])
-        erb :'/fosters/show'
+        redirect "/fosters/#{@foster.id}"
     else
         redirect '/fosters'
     end
 end
 
 delete '/fosters/:id' do
-    if current_user.id == session[:user_id]
-        @foster = Foster.all
-        foster = Foster.find(params[:id])
+    require_login
+    @foster = current_user.fosters.find_by_id(params[:id])
+    if  @foster
         foster.destroy 
-        redirect '/fosters'
     end
+        redirect '/fosters'
   end
 end
 
